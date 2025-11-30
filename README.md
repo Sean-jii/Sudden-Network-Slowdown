@@ -21,7 +21,7 @@ After observing a failed connection request from a suspected host (10.1.0.176) i
 
 —-----------
 
-We pivoted to the DeviceProcessEvents table to see if we could see anything that was suspicious around the time the ports scan started. We noticed a PowerShell script launching at poertscan.ps1 launch at 2025-11-26T22:20:24.0440687Z:
+I pivoted to the DeviceProcessEvents table to see if we could see anything that was suspicious around the time the ports scan started. I noticed a PowerShell script launching at poertscan.ps1 launch at 2025-11-26T22:20:24.0440687Z:
 
 <img width="610" height="141" alt="image" src="https://github.com/user-attachments/assets/d4d48ef4-db58-4bdd-82ec-7bd7f99b4bda" />
 
@@ -35,11 +35,11 @@ I logged into the suspected computer and observed the powershell script that was
 
 —-----------
 
-We observed the port scan script was launched by the seanji account, this is not expected behavior and is not something that was setup by the admins, so I isolated the device and ran a malware scan.
+I observed the port scan script was launched by the seanji account, this is not expected behavior and is not something that was setup by the admins, so I isolated the device and ran a malware scan.
 
 —-----------
 
-The malware scan produced no results, so out of caution, we kept the device isolated and put in a ticket to have it reimaged/rebuilt 
+The malware scan produced no results, so out of caution, I kept the device isolated and put in a ticket to have it reimaged/rebuilt 
 
 —-----------
 
