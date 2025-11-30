@@ -4,25 +4,33 @@ The server team has noticed a significant network performance degradation on som
 Timeline Summary and Findings:
 
 Seanji-slowdown was found failing several connection request against itself and another host on the same network:
+
 <img width="609" height="78" alt="image" src="https://github.com/user-attachments/assets/dbfa7253-428d-43e3-ba08-3b80d23ff801" />
+
 <img width="912" height="130" alt="image" src="https://github.com/user-attachments/assets/4189f695-ea8d-4045-949e-5948cdb9a2eb" />
 
 —-----------
 
 After observing a failed connection request from a suspected host (10.1.0.176) in chronological order, I noticed a port scan was taking place due to the sequential order of the ports. There were several port scans being conducted:
+
 <img width="322" height="101" alt="image" src="https://github.com/user-attachments/assets/e017c5a3-4d8a-4934-b5d9-431842e44c3b" />
+
 <img width="929" height="196" alt="image" src="https://github.com/user-attachments/assets/d6dff87a-73f9-4c79-90b7-8576759fc198" />
+
 <img width="925" height="223" alt="image" src="https://github.com/user-attachments/assets/8381b78e-d6b7-4231-b38b-4448a28492b7" />
 
 —-----------
 
 We pivoted to the DeviceProcessEvents table to see if we could see anything that was suspicious around the time the ports scan started. We noticed a PowerShell script launching at poertscan.ps1 launch at 2025-11-26T22:20:24.0440687Z:
+
 <img width="610" height="141" alt="image" src="https://github.com/user-attachments/assets/d4d48ef4-db58-4bdd-82ec-7bd7f99b4bda" />
+
 <img width="928" height="32" alt="image" src="https://github.com/user-attachments/assets/660fc137-8a4a-4d7b-952c-2fd26bb0b1d2" />
 
 —-----------
 
 I logged into the suspected computer and observed the powershell script that was used to conduct the port scan:
+
 <img width="936" height="242" alt="image" src="https://github.com/user-attachments/assets/6381a59e-46dc-44c6-9e3a-9d68bbd6033f" />
 
 —-----------
