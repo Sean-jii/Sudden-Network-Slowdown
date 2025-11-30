@@ -58,6 +58,7 @@ MITRE ATT&CK Framework Related TTPs:
 
 ## TA0008 – Lateral Movement
 - **T1021 – Remote Services**
+- 
 
 
 
